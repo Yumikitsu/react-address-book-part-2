@@ -67,16 +67,16 @@ function UpdateContact({ onAction }) {
             <section className="FormSection">
                 <form key={formKey} className="Form" onSubmit=  {handleSubmit}>
                     <label>First Name:
-                        <input type="text" name="firstName" value=  {person.firstName} onChange= {handleTextChange}/>
+                        <input type="text" name="firstName" value={person.firstName} onChange={handleTextChange}/>
                     </label>
                     <label>Last Name:
-                        <input type="text" name="lastName" value=   {person.lastName} onChange=   {handleTextChange}/>
+                        <input type="text" name="lastName" value={person.lastName} onChange={handleTextChange}/>
                     </label>
                     <label>Street:
-                        <input type="text" name="Street" value= {person.street} onChange=   {handleTextChange}/>
+                        <input type="text" name="street" value={person.street} onChange={handleTextChange}/>
                     </label>
                     <label>City:
-                        <input type="text" name="city" value=   {person.city} onChange=   {handleTextChange}/>
+                        <input type="text" name="city" value={person.city} onChange={handleTextChange}/>
                     </label>
                     <label>Latitude:
                         <input type="text" name="latitude" value={person.latitude} onChange={handleTextChange}/>

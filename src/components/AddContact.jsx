@@ -52,8 +52,10 @@ function AddContact({ onAction }) {
     // Handle a freetext change event
     const handleTextChange = (event) => {
         if (event.target.name === 'latitude' || event.target.name === 'longitude') {
+            console.log("Test")
             setContactData({...contactData, [event.target.name]:parseFloat(event.target.value)})
         } else {
+            console.log("Nice")
             setContactData({...contactData, [event.target.name]:event.target.value})
         }
     }
@@ -65,16 +67,16 @@ function AddContact({ onAction }) {
             <section className="FormSection">
                 <form key={formKey} className="Form" onSubmit=  {handleSubmit}>
                     <label>First Name:
-                        <input type="text" name="firstName" value=  {contactData.firstName} onChange= {handleTextChange}/>
+                        <input type="text" name="firstName" value={contactData.firstName} onChange={handleTextChange}/>
                     </label>
                     <label>Last Name:
-                        <input type="text" name="lastName" value=   {contactData.lastName} onChange=   {handleTextChange}/>
+                        <input type="text" name="lastName" value={contactData.lastName} onChange={handleTextChange}/>
                     </label>
                     <label>Street:
-                        <input type="text" name="Street" value= {contactData.street} onChange=   {handleTextChange}/>
+                        <input type="text" name="street" value={contactData.street} onChange={handleTextChange}/>
                     </label>
                     <label>City:
-                        <input type="text" name="city" value=   {contactData.city} onChange=   {handleTextChange}/>
+                        <input type="text" name="city" value={contactData.city} onChange={handleTextChange}/>
                     </label>
                     <label>Latitude:
                         <input type="text" name="latitude" value={contactData.latitude} onChange={handleTextChange}/>
