@@ -30,9 +30,6 @@ function ContactInformation() {
             <p>Street: {person.street}</p>
             <p>City: {person.city}</p>
         </div>
-        <div className="EarthImageContainer">
-            <img className="EarthImage" src={Earth}></img>
-        </div>
         </>
     )
 }
