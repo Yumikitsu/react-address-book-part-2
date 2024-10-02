@@ -51,7 +51,11 @@ function AddContact({ onAction }) {
 
     // Handle a freetext change event
     const handleTextChange = (event) => {
-        setContactData({...contactData, [event.target.name]:event.target.value})
+        if (event.target.name === 'latitude' || event.target.name === 'longitude') {
+            setContactData({...contactData, [event.target.name]:parseFloat(event.target.value)})
+        } else {
+            setContactData({...contactData, [event.target.name]:event.target.value})
+        }
     }
 
     return (
@@ -71,6 +75,12 @@ function AddContact({ onAction }) {
                     </label>
                     <label>City:
                         <input type="text" name="city" value=   {contactData.city} onChange=   {handleTextChange}/>
+                    </label>
+                    <label>Latitude:
+                        <input type="text" name="latitude" value={contactData.latitude} onChange={handleTextChange}/>
+                    </label>
+                    <label>Longitude:
+                        <input type="text" name="longitude" value={contactData.longitude} onChange={handleTextChange}/>
                     </label>
                     <div className="SubmitButton">
                         <input className="SubmitForm" type="submit" value={"Create"} />

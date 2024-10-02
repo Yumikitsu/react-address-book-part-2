@@ -53,7 +53,11 @@ function UpdateContact({ onAction }) {
 
     // Handle a freetext change event
     const handleTextChange = (event) => {
-        setPerson({...person, [event.target.name]:event.target.value})
+        if (event.target.name === 'latitude' || event.target.name === 'longitude') {
+            setPerson({...person, [event.target.name]:parseFloat(event.target.value)})
+        } else {
+            setPerson({...person, [event.target.name]:event.target.value})
+        }
     }
 
     return (
@@ -73,6 +77,12 @@ function UpdateContact({ onAction }) {
                     </label>
                     <label>City:
                         <input type="text" name="city" value=   {person.city} onChange=   {handleTextChange}/>
+                    </label>
+                    <label>Latitude:
+                        <input type="text" name="latitude" value={person.latitude} onChange={handleTextChange}/>
+                    </label>
+                    <label>Longitude:
+                        <input type="text" name="longitude" value={person.longitude} onChange={handleTextChange}/>
                     </label>
                     <div className="SubmitButton">
                         <input className="SubmitForm" type="submit" value={"Update"} />

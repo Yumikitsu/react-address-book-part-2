@@ -36,7 +36,7 @@ function App() {
           </ul>
         </nav>
       </header>
-      <div className="Infromation">
+      <div className="Information">
         <AppContext.Provider  value={{ contacts }}>
           <Routes>
             <Route path="/" element={<ContactsList />}/>
